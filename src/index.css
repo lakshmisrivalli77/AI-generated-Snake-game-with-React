@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@theme inline {
+    --font-sans: 'Inter', sans-serif;
+    --font-mono: 'Courier New', monospace;
+    
+    --color-background: #050505;
+    --color-foreground: #FFFFFF;
+    
+    --color-card: #111111;
+    --color-card-foreground: #FFFFFF;
+    
+    --color-border: #222222;
+    
+    --color-neon-green: #39FF14;
+    --color-neon-purple: #BC13FE;
+    --color-neon-cyan: #00FFFF;
+    
+    --color-text-dim: #777777;
+}
+
+:root {
+    --background: #050505;
+    --foreground: #FFFFFF;
+    --card: #111111;
+    --card-foreground: #FFFFFF;
+    --border: #222222;
+    --radius: 20px;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  .bento-card {
+    @apply bg-card border border-border rounded-[20px] p-5 relative overflow-hidden;
+  }
+  
+  .section-title {
+    @apply text-[10px] uppercase tracking-[2px] text-text-dim mb-5 block font-bold;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-text-dim;
+  }
+}
